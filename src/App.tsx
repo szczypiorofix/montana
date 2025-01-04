@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Home } from './pages/home.page';
+import { Home } from './pages/HomePage.page';
 
 export const App = () => {
     return (
