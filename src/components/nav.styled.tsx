@@ -8,6 +8,7 @@ const NavStyled = styled.nav`
 const NavUlStyled = styled.ul`
     width: 100%;
     padding-left: 0;
+    margin: 0;
     list-style: none;
     display: flex;
     overflow: hidden;
@@ -18,12 +19,15 @@ const NavLiStyled= styled.li`
 
 `;
 
-const NavLiAStyled = styled.button`
+const NavLiButtonStyled = styled.button`
     text-decoration: none;
     display: flex;
     color: #f2f2f2;
     justify-content: center;
+    background-color: transparent;
     align-items: center;
+    border: none;
+    cursor: pointer;
     padding: 14px 16px;
     font-size: 17px;
     transition: all 0.15s ease-in-out;
@@ -36,4 +40,4 @@ const NavLiAStyled = styled.button`
     }
 `;
 
-export { NavLiAStyled, NavLiStyled, NavStyled, NavUlStyled };
+export { NavLiButtonStyled, NavLiStyled, NavStyled, NavUlStyled };

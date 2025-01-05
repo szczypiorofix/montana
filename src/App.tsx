@@ -1,14 +1,38 @@
-import React, { useState } from 'react';
+import React, { useReducer } from 'react';
 
+import { NavComponent } from './components/nav.component';
+import { NavList } from './models';
 import { About, Contact, Home, Projects } from './pages';
 import { APP_VIEW } from './shared/enums/AppView.enum';
-import { AppContextModel } from './shared/models';
-import { AppContext } from './storage/App.context';
-import { appContextDefault } from './storage/App.context.default';
-import { NavComponent } from './components/nav.component';
+import { AppContext } from './storage/AppContext';
+import { appContextDefault } from './storage/AppContext.default';
+import { AppSettingsReducer } from './storage/AppContext.reducer';
 
-export const App = (): React.JSX.Element => {
-    const [ state ] = useState<AppContextModel>(appContextDefault);
+const navList: NavList = {
+    active: true,
+    items: [
+        {
+            id: APP_VIEW.HOME,
+            name: "Strona główna"
+        },
+        {
+            id: APP_VIEW.PROJECTS,
+            name: "Projekty"
+        },
+        {
+            id: APP_VIEW.ABOUT,
+            name: "O mnie"
+        },
+        {
+            id: APP_VIEW.CONTACT,
+            name: "Kontakt"
+        }
+    ]
+}
+
+export const App = (): React.JSX.Element => {  
+    const [ state, dispatch ] = useReducer(AppSettingsReducer, appContextDefault);
+
     const appViewResolver = (): React.JSX.Element => {
         switch(state.view) {
             case APP_VIEW.CONTACT:
@@ -21,12 +45,25 @@ export const App = (): React.JSX.Element => {
                 return <Home></Home>
         }
     }
+    
     return (
         <AppContext.Provider
-            value={state}
+            value={{
+                state: state,
+                setState(_state, _type) {
+                    dispatch(
+                        {
+                            type: _type,
+                            payload: _state
+                        }
+                    )
+                },
+            }}
         >
             <div>
-                <NavComponent></NavComponent>
+                <NavComponent
+                    list={navList}
+                />
             </div>
             <div className="App">
                 { appViewResolver() }
