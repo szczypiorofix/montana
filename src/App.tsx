@@ -1,14 +1,46 @@
 import React, { useState } from 'react';
 
+import { NavComponent } from './components/nav.component';
+import { NavList } from './models';
 import { About, Contact, Home, Projects } from './pages';
 import { APP_VIEW } from './shared/enums/AppView.enum';
 import { AppContextModel } from './shared/models';
 import { AppContext } from './storage/App.context';
 import { appContextDefault } from './storage/App.context.default';
-import { NavComponent } from './components/nav.component';
+
+const navList: NavList = {
+    active: true,
+    items: [
+        {
+            id: 0,
+            name: "Strona główna"
+        },
+        {
+            id: 1,
+            name: "Projekty"
+        },
+        {
+            id: 2,
+            name: "O mnie"
+        },
+        {
+            id: 3,
+            name: "Kontakt"
+        }
+    ]
+}
 
 export const App = (): React.JSX.Element => {
-    const [ state ] = useState<AppContextModel>(appContextDefault);
+    const [state, setState] = useState<AppContextModel>({
+        ...appContextDefault,
+        togleView(view) {
+            setState({
+                ...state,
+                view: view
+            })
+        },
+    });
+    
     const appViewResolver = (): React.JSX.Element => {
         switch(state.view) {
             case APP_VIEW.CONTACT:
@@ -21,12 +53,15 @@ export const App = (): React.JSX.Element => {
                 return <Home></Home>
         }
     }
+    
     return (
         <AppContext.Provider
             value={state}
         >
             <div>
-                <NavComponent></NavComponent>
+                <NavComponent
+                    list={navList}
+                />
             </div>
             <div className="App">
                 { appViewResolver() }
