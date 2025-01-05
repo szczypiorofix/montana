@@ -1,5 +1,7 @@
+import { APP_VIEW } from "../shared/enums/AppView.enum";
+
 export interface NavListItem {
-    id: number;
+    id: APP_VIEW;
     name: string;
 }
 

@@ -1,6 +1,6 @@
 export enum APP_VIEW {
-    HOME,
-    PROJECTS,
-    ABOUT,
-    CONTACT
+    HOME = "Home",
+    PROJECTS = "Projects",
+    ABOUT = "About",
+    CONTACT = "Contact"
 }
