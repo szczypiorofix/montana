@@ -18,7 +18,7 @@ const NavLiStyled= styled.li`
 
 `;
 
-const NavLiAStyled = styled.a`
+const NavLiAStyled = styled.button`
     text-decoration: none;
     display: flex;
     color: #f2f2f2;

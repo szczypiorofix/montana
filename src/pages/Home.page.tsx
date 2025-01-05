@@ -1,12 +1,9 @@
 import React from 'react';
-import { NavComponent } from '../components/nav.component';
 
-
-export const Home = () => {    
+export const Home = (): React.JSX.Element => {
     return (
         <div>
             <p>Home components</p>
-            <NavComponent></NavComponent>
         </div>
     );
 }
