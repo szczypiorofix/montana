@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
 
-import { NavComponent } from './components/nav.component';
+import { NavComponent } from './components/nav/Nav.component';
 import { NavList } from './models';
 import { About, Contact, Home, Projects } from './pages';
 import { APP_VIEW } from './shared/enums/AppView.enum';
@@ -60,11 +60,9 @@ export const App = (): React.JSX.Element => {
                 },
             }}
         >
-            <div>
-                <NavComponent
-                    list={navList}
-                />
-            </div>
+            <NavComponent
+                list={navList}
+            />
             <div className="App">
                 { appViewResolver() }
             </div>
