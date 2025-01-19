@@ -1,0 +1,12 @@
+:root {
+    /** ---------- COLORS ---------- */
+    --PrimaryDarkColor: #0C0C0C;
+    --PrimaryWhiteColor: #F2F2F2;
+    --SecondaryWhiteColor: #DDDDDD;
+    --SecondaryDarkColor: #333333;
+    --PrimaryAccentColor: #0f33ff;
+    --SecondaryAccentColor: #0b8256;
+
+    /** ---------- SIZES ---------- */
+    --headerHeight: 120px;
+}

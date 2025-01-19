@@ -7,6 +7,12 @@ import { APP_VIEW } from './shared/enums/AppView.enum';
 import { AppContext } from './storage/AppContext';
 import { appContextDefault } from './storage/AppContext.default';
 import { AppSettingsReducer } from './storage/AppContext.reducer';
+import { HeaderComponent } from "./components/header/Header.component";
+
+import logo from './logo.png';
+import { ViewPortComponent } from "./components/viewport/ViewPort.component";
+import { InnerContentComponent } from "./components/inner-content/InnerContenr.component";
+import {ContentWrapperComponent} from "./components/content-wrapper/ContentWrapper.component";
 
 const navList: NavList = {
     active: true,
@@ -34,7 +40,7 @@ export const App = (): React.JSX.Element => {
     const [ state, dispatch ] = useReducer(AppSettingsReducer, appContextDefault);
 
     const appViewResolver = (): React.JSX.Element => {
-        switch(state.view) {
+        switch (state.view) {
             case APP_VIEW.CONTACT:
                 return <Contact></Contact>
             case APP_VIEW.PROJECTS:
@@ -45,7 +51,7 @@ export const App = (): React.JSX.Element => {
                 return <Home></Home>
         }
     }
-    
+
     return (
         <AppContext.Provider
             value={{
@@ -60,12 +66,19 @@ export const App = (): React.JSX.Element => {
                 },
             }}
         >
-            <NavComponent
-                list={navList}
-            />
-            <div className="App">
-                { appViewResolver() }
-            </div>
+            <ViewPortComponent>
+                <HeaderComponent
+                    logo={ logo }
+                />
+                <ContentWrapperComponent>
+                    <NavComponent
+                        list={navList}
+                    />
+                    <InnerContentComponent>
+                        { appViewResolver() }
+                    </InnerContentComponent>
+                </ContentWrapperComponent>
+            </ViewPortComponent>
         </AppContext.Provider>
     );
 }

@@ -1,7 +1,10 @@
-import styled from 'styled-components';
+import React from 'react';
 
-const ButtonStyled= styled.button`
+import { ButtonComponentProps } from '../../models';
+import { ButtonStyled } from './Button.styled';
 
-`;
-
-export { ButtonStyled };
+export const ButtonComponent = (props: ButtonComponentProps): React.JSX.Element => {
+    return <ButtonStyled>
+        { props.contentText }
+    </ButtonStyled>
+}
