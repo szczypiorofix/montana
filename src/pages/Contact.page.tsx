@@ -6,4 +6,4 @@ export const Contact = (): React.JSX.Element => {
             <p>Contact components</p>
         </div>
     );
-}
+};

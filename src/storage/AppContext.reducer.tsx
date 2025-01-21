@@ -1,7 +1,7 @@
 import { AppContextState } from "../shared/models";
 
 export enum APP_REDUCER_ACTION_TYPE {
-    CHANGE_APP_VIEW
+    CHANGE_APP_VIEW,
 }
 
 export interface IAppSettingsReducerAction {
@@ -18,4 +18,4 @@ export const AppSettingsReducer = ( prevState: AppContextState , action: IAppSet
         default:
             return prevState;
     }
-}
+};

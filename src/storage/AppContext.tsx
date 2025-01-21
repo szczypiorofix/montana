@@ -8,4 +8,4 @@ export const AppContext = createContext<AppContextModel>({
     setState: () => {}
 });
 
-export const useGlobalAppContext = () => useContext(AppContext)
+export const useGlobalAppContext = () => useContext(AppContext);

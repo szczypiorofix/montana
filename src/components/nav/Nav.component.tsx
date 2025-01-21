@@ -18,5 +18,5 @@ export const NavComponent = (props: NavComponentProps): React.JSX.Element => {
                 className={ state.view === navItem.id ? 'active' : '' }
             >{navItem.name}</NavLiButtonStyled></NavLiStyled>)}
         </NavUlStyled>
-    </NavStyled>
-}
+    </NavStyled>;
+};

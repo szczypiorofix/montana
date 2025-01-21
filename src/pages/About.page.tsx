@@ -6,4 +6,4 @@ export const About = (): React.JSX.Element => {
             <p>About components</p>
         </div>
     );
-}
+};

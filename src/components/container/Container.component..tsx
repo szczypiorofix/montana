@@ -7,5 +7,5 @@ import { ContainerComponentProps } from "../../models";
 export const ContainerComponent = (props: ContainerComponentProps): React.JSX.Element => {
     return <ContainerStyled>
         { props.children }
-    </ContainerStyled>
-}
+    </ContainerStyled>;
+};

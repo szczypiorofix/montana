@@ -7,5 +7,5 @@ export const ViewPortComponent = (props: ViewPortComponentProps): React.JSX.Elem
         <ViewPortWrapperStyled>
             { props.children }
         </ViewPortWrapperStyled>
-    </ViewPortStyled>
-}
+    </ViewPortStyled>;
+};

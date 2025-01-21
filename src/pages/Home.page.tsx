@@ -6,4 +6,4 @@ export const Home = (): React.JSX.Element => {
             <p>Home components</p>
         </div>
     );
-}
+};

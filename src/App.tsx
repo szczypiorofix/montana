@@ -34,23 +34,23 @@ const navList: NavList = {
             name: "Kontakt"
         }
     ]
-}
+};
 
-export const App = (): React.JSX.Element => {  
+export const App = (): React.JSX.Element => {
     const [ state, dispatch ] = useReducer(AppSettingsReducer, appContextDefault);
 
     const appViewResolver = (): React.JSX.Element => {
         switch (state.view) {
             case APP_VIEW.CONTACT:
-                return <Contact></Contact>
+                return <Contact></Contact>;
             case APP_VIEW.PROJECTS:
-                return <Projects></Projects>
+                return <Projects></Projects>;
             case APP_VIEW.ABOUT:
-                return <About></About>
+                return <About></About>;
             default: // Home
-                return <Home></Home>
+                return <Home></Home>;
         }
-    }
+    };
 
     return (
         <AppContext.Provider
@@ -62,7 +62,7 @@ export const App = (): React.JSX.Element => {
                             type: _type,
                             payload: _state
                         }
-                    )
+                    );
                 },
             }}
         >
@@ -81,4 +81,4 @@ export const App = (): React.JSX.Element => {
             </ViewPortComponent>
         </AppContext.Provider>
     );
-}
+};

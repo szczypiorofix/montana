@@ -6,4 +6,4 @@ export const Projects = (): React.JSX.Element => {
             <p>Projects components</p>
         </div>
     );
-}
+};

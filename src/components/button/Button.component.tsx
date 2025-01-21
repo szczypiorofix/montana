@@ -6,5 +6,5 @@ import { ButtonStyled } from './Button.styled';
 export const ButtonComponent = (props: ButtonComponentProps): React.JSX.Element => {
     return <ButtonStyled>
         { props.contentText }
-    </ButtonStyled>
-}
+    </ButtonStyled>;
+};

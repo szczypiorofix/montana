@@ -5,5 +5,5 @@ import { InnerContentComponentProps } from "../../models";
 export const InnerContentComponent = (props: InnerContentComponentProps): React.JSX.Element => {
     return <InnerContentStyled>
         { props.children }
-    </InnerContentStyled>
-}
+    </InnerContentStyled>;
+};
