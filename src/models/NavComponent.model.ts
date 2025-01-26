@@ -1,4 +1,4 @@
-import { APP_VIEW } from "../shared/enums/AppView.enum";
+import { APP_VIEW } from "../shared/enums";
 
 export interface NavListItem {
     id: APP_VIEW;
@@ -12,4 +12,5 @@ export interface NavList {
 
 export interface NavComponentProps {
     list: NavList;
+    visible: boolean;
 }

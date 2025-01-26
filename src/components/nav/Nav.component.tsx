@@ -1,22 +1,21 @@
 import React from 'react';
-
 import { NavComponentProps } from "../../models";
 import { useGlobalAppContext } from "../../storage/AppContext";
-import { APP_REDUCER_ACTION_TYPE } from "../../storage/AppContext.reducer";
-import {NavLiButtonStyled, NavLiStyled, NavStyled, NavUlStyled} from "./Nav.styled";
+import { NavLiButtonStyled, NavLiStyled, NavStyled, NavUlStyled } from "./Nav.styled";
+import { JSXElement } from "../../shared/models";
 
-export const NavComponent = (props: NavComponentProps): React.JSX.Element => {
-    const { state, setState } = useGlobalAppContext();
+export const NavComponent: (props: NavComponentProps) => JSXElement = (props: NavComponentProps): JSXElement => {
+    const { state, setAppView } = useGlobalAppContext();
 
     return <NavStyled>
-        <NavUlStyled>
+        { props.visible && <NavUlStyled>
             {props.list.items.map((navItem, index) => <NavLiStyled key={navItem.name + index}><NavLiButtonStyled
-                onClick={() => setState({
+                onClick={() => setAppView({
                     ...state,
                     view: navItem.id
-                }, APP_REDUCER_ACTION_TYPE.CHANGE_APP_VIEW )}
+                } )}
                 className={ state.view === navItem.id ? 'active' : '' }
             >{navItem.name}</NavLiButtonStyled></NavLiStyled>)}
-        </NavUlStyled>
+        </NavUlStyled> }
     </NavStyled>;
 };

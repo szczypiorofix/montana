@@ -23,6 +23,14 @@ const InnerContentStyled = styled.div`
     justify-content: center;
     margin: 0 auto;
     font-size: 32px;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+        }
+    }
 `;
 
 export { InnerContentStyled };

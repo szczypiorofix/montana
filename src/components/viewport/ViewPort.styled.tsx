@@ -7,12 +7,10 @@ const ViewPortStyled = styled.div`
     width: 100%;
     height: 100vh;
     box-shadow: 0 0 45px 5px var(--PrimaryDarkColor);
-    background-color: var(--PrimaryDarkColor);
+    background-color: var(--BackgroundCogWheelColor);
     color: var(--PrimaryWhiteColor);
     display: block;
     overflow: hidden;
-    touch-action: none;
-    user-select: none;
 `;
 
 const ViewPortWrapperStyled = styled.div`

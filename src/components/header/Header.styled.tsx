@@ -9,6 +9,7 @@ const HeaderStyled = styled.header`
     height: var(--headerHeight);
     max-height: var(--headerHeight);
     padding: 12px 0;
+    position: relative;
     & img {
         max-width: 180px;
         height: auto;

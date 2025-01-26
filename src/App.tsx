@@ -3,16 +3,18 @@ import React, { useReducer } from 'react';
 import { NavComponent } from './components/nav/Nav.component';
 import { NavList } from './models';
 import { About, Contact, Home, Projects } from './pages';
-import { APP_VIEW } from './shared/enums/AppView.enum';
+import { APP_VIEW } from './shared/enums';
 import { AppContext } from './storage/AppContext';
 import { appContextDefault } from './storage/AppContext.default';
-import { AppSettingsReducer } from './storage/AppContext.reducer';
+import { AppSettingsReducer, getAppContextProviderValue } from './storage/AppContext.reducer';
 import { HeaderComponent } from "./components/header/Header.component";
-
-import logo from './logo.png';
 import { ViewPortComponent } from "./components/viewport/ViewPort.component";
 import { InnerContentComponent } from "./components/inner-content/InnerContenr.component";
-import {ContentWrapperComponent} from "./components/content-wrapper/ContentWrapper.component";
+import { ContentWrapperComponent } from "./components/content-wrapper/ContentWrapper.component";
+import { CogWheelComponent } from "./components/cogwheel/CogWheel.component";
+import { JSXElement } from "./shared/models";
+
+import logo from './logo.png';
 
 const navList: NavList = {
     active: true,
@@ -36,10 +38,10 @@ const navList: NavList = {
     ]
 };
 
-export const App = (): React.JSX.Element => {
+export const App: () => JSXElement = (): JSXElement=> {
     const [ state, dispatch ] = useReducer(AppSettingsReducer, appContextDefault);
 
-    const appViewResolver = (): React.JSX.Element => {
+    const appViewResolver: () => JSXElement = (): JSXElement => {
         switch (state.view) {
             case APP_VIEW.CONTACT:
                 return <Contact></Contact>;
@@ -53,26 +55,14 @@ export const App = (): React.JSX.Element => {
     };
 
     return (
-        <AppContext.Provider
-            value={{
-                state: state,
-                setState(_state, _type) {
-                    dispatch(
-                        {
-                            type: _type,
-                            payload: _state
-                        }
-                    );
-                },
-            }}
-        >
+        <AppContext.Provider value={ getAppContextProviderValue(state, dispatch) }>
+            <CogWheelComponent />
             <ViewPortComponent>
-                <HeaderComponent
-                    logo={ logo }
-                />
+                <HeaderComponent logo={ logo }/>
                 <ContentWrapperComponent>
                     <NavComponent
-                        list={navList}
+                        list={ navList }
+                        visible={ true}
                     />
                     <InnerContentComponent>
                         { appViewResolver() }

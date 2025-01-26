@@ -1,5 +1,5 @@
 import { APP_REDUCER_ACTION_TYPE } from "../../storage/AppContext.reducer";
-import { APP_VIEW } from "../enums/AppView.enum";
+import { APP_VIEW } from "../enums";
 
 export interface AppContextState {
     version: string;
@@ -9,4 +9,7 @@ export interface AppContextState {
 export interface AppContextModel {
     state: AppContextState;
     setState: (state: AppContextState, type: APP_REDUCER_ACTION_TYPE) => void;
+    setAppView: (state: AppContextState) => void;
+    setNextAppView: (state: AppContextState) => void;
+    setPrevAppView: (state: AppContextState) => void;
 }

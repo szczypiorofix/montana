@@ -12,20 +12,20 @@ const NavStyled = styled.nav`
     -ms-flex-align: center;
     align-items: center;
     
-    &:before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 0;
-        -webkit-transform: translateY(-50%);
-        transform: translateY(-50%);
-        width: 2px;
-        height: 70%;
-        max-height: 750px;
-        background-color: #555;
-        opacity: .35;
-        z-index: 10;
-    }
+    //&:before {
+    //    content: "";
+    //    position: absolute;
+    //    top: 50%;
+    //    left: 0;
+    //    -webkit-transform: translateY(-50%);
+    //    transform: translateY(-50%);
+    //    width: 2px;
+    //    height: 70%;
+    //    max-height: 750px;
+    //    background-color: #555;
+    //    opacity: .35;
+    //    z-index: 10;
+    //}
 `;
 
 const NavUlStyled = styled.ul`

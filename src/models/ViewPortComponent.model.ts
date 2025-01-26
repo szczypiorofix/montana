@@ -1,5 +1,5 @@
-import React from 'react';
+import { JSXElement } from "../shared/models";
 
 export interface ViewPortComponentProps {
-    children?: React.JSX.Element | Array<React.JSX.Element>;
+    children?: JSXElement | Array<JSXElement>;
 }
