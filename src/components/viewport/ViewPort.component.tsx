@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
 import { ViewPortStyled, ViewPortWrapperStyled } from "./ViewPort.styled";
 import { ViewPortComponentProps } from "../../models";
 import { JSXElement } from "../../shared/models";
 import { useGlobalAppContext } from "../../storage/AppContext";
+import { Point, useSwipe } from "../../hooks/useSwipe";
 
 enum ScrollType {
     NONE = 0,
@@ -12,7 +13,12 @@ enum ScrollType {
 
 export const ViewPortComponent: (props: ViewPortComponentProps) => JSXElement = (props: ViewPortComponentProps): JSXElement => {
     const { state, setNextAppView, setPrevAppView } = useGlobalAppContext();
-    const [ scrollType, setScrollType ] = React.useState<ScrollType>(ScrollType.NONE);
+    const [ scrollType, setScrollType ] = useState<ScrollType>(ScrollType.NONE);
+    const [ startSwipeEvent, endSwipeEvent ] = useSwipe({
+        returnDelta(delta: Point) {
+            setScrollType(determineScrollType(- delta.y));
+        }
+    });
 
     useEffect(() => {
         if (scrollType === ScrollType.UP) {
@@ -23,7 +29,7 @@ export const ViewPortComponent: (props: ViewPortComponentProps) => JSXElement = 
             setNextAppView(state);
             setScrollType(ScrollType.NONE);
         }
-    }, [ scrollType ]);
+    }, [ scrollType, setNextAppView, setPrevAppView, state ]);
 
     const determineScrollType = (deltaY: number): ScrollType => {
         if (deltaY > 0) {
@@ -37,14 +43,11 @@ export const ViewPortComponent: (props: ViewPortComponentProps) => JSXElement = 
 
     return <ViewPortStyled>
         <ViewPortWrapperStyled
-            onWheel={(event) => {
-                setScrollType(determineScrollType(event.deltaY));
-            }}
+            onWheel={(event) => { setScrollType(determineScrollType(event.deltaY)); }}
+            onTouchStart={ startSwipeEvent }
+            onTouchEnd={ endSwipeEvent }
         >
             { props.children }
-            <div>
-                Scroll: { scrollType }
-            </div>
         </ViewPortWrapperStyled>
     </ViewPortStyled>;
 };

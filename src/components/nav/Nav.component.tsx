@@ -9,13 +9,13 @@ export const NavComponent: (props: NavComponentProps) => JSXElement = (props: Na
 
     return <NavStyled>
         { props.visible && <NavUlStyled>
-            {props.list.items.map((navItem, index) => <NavLiStyled key={navItem.name + index}><NavLiButtonStyled
-                onClick={() => setAppView({
+            { props.list.items.map((navItem, index) => <NavLiStyled key={ navItem.name + index }><NavLiButtonStyled
+                onClick={ () => setAppView({
                     ...state,
                     view: navItem.id
-                } )}
+                }) }
                 className={ state.view === navItem.id ? 'active' : '' }
-            >{navItem.name}</NavLiButtonStyled></NavLiStyled>)}
+            >{ navItem.name }</NavLiButtonStyled></NavLiStyled>) }
         </NavUlStyled> }
     </NavStyled>;
 };

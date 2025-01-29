@@ -11,9 +11,9 @@ export interface IAppSettingsReducerAction {
     payload: AppContextState;
 }
 
-export const AppSettingsReducer = ( prevState: AppContextState , action: IAppSettingsReducerAction ): AppContextState => {
+export const AppSettingsReducer = (prevState: AppContextState , action: IAppSettingsReducerAction): AppContextState => {
     const { type, payload } = action;
-    switch( type ) {
+    switch(type) {
         case APP_REDUCER_ACTION_TYPE.CHANGE_APP_VIEW:
             return { ...prevState, view: payload.view };
         default:

@@ -62,7 +62,7 @@ export const App: () => JSXElement = (): JSXElement=> {
                 <ContentWrapperComponent>
                     <NavComponent
                         list={ navList }
-                        visible={ true}
+                        visible={ true }
                     />
                     <InnerContentComponent>
                         { appViewResolver() }

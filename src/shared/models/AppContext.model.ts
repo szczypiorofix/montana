@@ -3,6 +3,7 @@ import { APP_VIEW } from "../enums";
 
 export interface AppContextState {
     version: string;
+    reload: boolean;
     view: APP_VIEW;
 }
 
