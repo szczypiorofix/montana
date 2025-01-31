@@ -46,14 +46,14 @@ export const App: () => JSXElement = (): JSXElement => {
 
     const appViewResolver: () => JSXElement = (): JSXElement => {
         switch (state.view) {
-            case APP_VIEW.CONTACT:
-                return <Contact></Contact>;
-            case APP_VIEW.PROJECTS:
-                return <Projects></Projects>;
-            case APP_VIEW.ABOUT:
-                return <About></About>;
-            default: // Home
-                return <Home></Home>;
+        case APP_VIEW.CONTACT:
+            return <Contact></Contact>;
+        case APP_VIEW.PROJECTS:
+            return <Projects></Projects>;
+        case APP_VIEW.ABOUT:
+            return <About></About>;
+        default: // Home
+            return <Home></Home>;
         }
     };
 

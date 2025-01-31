@@ -17,7 +17,7 @@ export default tseslint.config(
         },
         rules: {
             semi: 'error',
-            indent: 'warn',
+            indent: 'error',
         },
     }
 );
