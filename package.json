@@ -22,12 +22,6 @@
         "eslint": "npx  eslint .",
         "eslint-fix": "npx  eslint . --fix"
     },
-    "husky": {
-        "hooks": {
-            "pre-commit": "npm run format && npm run eslint && npm test",
-            "pre-push": "npm run eslint && npm test"
-        }
-    },
     "eslintConfig": {
         "extends": "react-app"
     },
@@ -70,7 +64,6 @@
         "eslint-plugin-n": "^16.6.2",
         "eslint-plugin-promise": "^6.6.0",
         "eslint-plugin-react-hooks": "^5.0.0",
-        "husky": "^9.1.7",
         "prettier": "^3.4.2",
         "ts-node-dev": "^2.0.0",
         "tslint": "^6.1.3",
