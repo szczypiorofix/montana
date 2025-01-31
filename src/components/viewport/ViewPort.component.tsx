@@ -3,7 +3,8 @@ import { ViewPortStyled, ViewPortWrapperStyled } from './ViewPort.styled';
 import { ViewPortComponentProps } from '../../models';
 import { JSXElement } from '../../shared/models';
 import { useGlobalAppContext } from '../../storage/AppContext';
-import { Point, useSwipe } from '../../hooks/useSwipe';
+import { useSwipe } from '../../hooks/useSwipe';
+import { Point } from '../../shared/models/Point.model';
 
 enum ScrollType {
     NONE = 0,

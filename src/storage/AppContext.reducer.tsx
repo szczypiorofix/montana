@@ -25,7 +25,7 @@ export const AppSettingsReducer = (
         default:
             return prevState;
     }
-}
+};
 
 export const getAppContextProviderValue: (
     state: AppContextState,
