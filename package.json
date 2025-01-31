@@ -13,7 +13,8 @@
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
-        "test": "react-scripts test",
+        "test": "set CI=true && react-scripts test",
+        "tests": "react-scripts test",
         "eject": "react-scripts eject",
         "prepare": "husky install",
         "format": "prettier --write .",
@@ -21,12 +22,12 @@
         "eslint": "npx  eslint .",
         "eslint-fix": "npx  eslint . --fix"
     },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run format && npm run eslint && npm test",
-      "pre-push": "npm run eslint && npm test"
-    }
-  },
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm run format && npm run eslint && npm test",
+            "pre-push": "npm run eslint && npm test"
+        }
+    },
     "eslintConfig": {
         "extends": "react-app"
     },
@@ -53,8 +54,8 @@
     },
     "devDependencies": {
         "@eslint/js": "^9.14.0",
-        "@testing-library/jest-dom": "^5.16.4",
-        "@testing-library/react": "12.1.5",
+        "@testing-library/jest-dom": "^5.17.0",
+        "@testing-library/react": "^12.1.5",
         "@testing-library/react-hooks": "^8.0.1",
         "@testing-library/user-event": "^13.5.0",
         "@types/eslint__js": "^8.42.3",
