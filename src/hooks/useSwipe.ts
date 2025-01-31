@@ -9,18 +9,16 @@ export interface UseSwipeProps {
     returnDelta(delta: Point): void;
 }
 
-export const useSwipe: (props: UseSwipeProps) => [
-    (event: React.TouchEvent) => void,
-    (event: React.TouchEvent) => void,
-] = (props: UseSwipeProps): [
-    (event: React.TouchEvent) => void,
-    (event: React.TouchEvent) => void,
-] => {
+export const useSwipe: (
+    props: UseSwipeProps
+) => [(event: React.TouchEvent) => void, (event: React.TouchEvent) => void] = (
+    props: UseSwipeProps
+): [(event: React.TouchEvent) => void, (event: React.TouchEvent) => void] => {
     const [start, setStart] = useState<Point>({ x: 0, y: 0 });
     const swipeStart = (startPointEvent: React.TouchEvent) => {
         setStart({
             x: startPointEvent.touches[0].clientX,
-            y: startPointEvent.touches[0].clientY
+            y: startPointEvent.touches[0].clientY,
         });
     };
     const swipeEnd = (endPointEvent: React.TouchEvent) => {
@@ -30,7 +28,7 @@ export const useSwipe: (props: UseSwipeProps) => [
         const deltaY = endY - start.y;
         props.returnDelta({
             x: deltaX,
-            y: deltaY
+            y: deltaY,
         });
     };
     return [swipeStart, swipeEnd];

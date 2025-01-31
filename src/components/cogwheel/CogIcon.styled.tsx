@@ -1,4 +1,4 @@
-import styled, {keyframes} from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 const rotate = keyframes`
     0% {
@@ -18,17 +18,17 @@ const rotate = keyframes`
     }
 `;
 
-const CogIconStyled= styled.svg<{
+const CogIconStyled = styled.svg<{
     $color: string;
     $rotating: boolean;
     $height?: number;
     $width?: number;
 }>`
-    fill: ${props => props.$color || "black"};
-    width: ${props => props.$width+"px" || "unset"};
-    height: ${props => props.$height+"px" || "unset"};
-    animation: ${ rotate } 12s infinite ease-in-out;
-    ${props => props.$rotating === false && `animation: none;`}
+    fill: ${(props) => props.$color || 'black'};
+    width: ${(props) => props.$width + 'px' || 'unset'};
+    height: ${(props) => props.$height + 'px' || 'unset'};
+    animation: ${rotate} 12s infinite ease-in-out;
+    ${(props) => props.$rotating === false && `animation: none;`}
 `;
 
 const CogIconContainer = styled.div`

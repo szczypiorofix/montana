@@ -1,6 +1,9 @@
-import { AppContextModel, AppContextState } from "../shared/models";
-import { getNextAppView, getPreviousAppView } from "../shared/helpers/AppViewResolver";
-import React from "react";
+import { AppContextModel, AppContextState } from '../shared/models';
+import {
+    getNextAppView,
+    getPreviousAppView,
+} from '../shared/helpers/AppViewResolver';
+import React from 'react';
 
 export enum APP_REDUCER_ACTION_TYPE {
     CHANGE_APP_VIEW,
@@ -11,9 +14,12 @@ export interface IAppSettingsReducerAction {
     payload: AppContextState;
 }
 
-export const AppSettingsReducer = (prevState: AppContextState , action: IAppSettingsReducerAction): AppContextState => {
+export const AppSettingsReducer = (
+    prevState: AppContextState,
+    action: IAppSettingsReducerAction
+): AppContextState => {
     const { type, payload } = action;
-    switch(type) {
+    switch (type) {
         case APP_REDUCER_ACTION_TYPE.CHANGE_APP_VIEW:
             return { ...prevState, view: payload.view };
         default:
@@ -21,7 +27,10 @@ export const AppSettingsReducer = (prevState: AppContextState , action: IAppSett
     }
 };
 
-export const getAppContextProviderValue: (state: AppContextState, dispatch: React.Dispatch<IAppSettingsReducerAction>) => AppContextModel = (
+export const getAppContextProviderValue: (
+    state: AppContextState,
+    dispatch: React.Dispatch<IAppSettingsReducerAction>
+) => AppContextModel = (
     state: AppContextState,
     dispatch: React.Dispatch<IAppSettingsReducerAction>
 ): AppContextModel => {
@@ -35,8 +44,8 @@ export const getAppContextProviderValue: (state: AppContextState, dispatch: Reac
                 type: APP_REDUCER_ACTION_TYPE.CHANGE_APP_VIEW,
                 payload: {
                     ..._state,
-                    view: _state.view
-                } as AppContextState
+                    view: _state.view,
+                } as AppContextState,
             });
         },
         setNextAppView(_state) {
@@ -44,8 +53,8 @@ export const getAppContextProviderValue: (state: AppContextState, dispatch: Reac
                 type: APP_REDUCER_ACTION_TYPE.CHANGE_APP_VIEW,
                 payload: {
                     ..._state,
-                    view: getNextAppView(_state.view)
-                }
+                    view: getNextAppView(_state.view),
+                },
             });
         },
         setPrevAppView(_state) {
@@ -53,9 +62,9 @@ export const getAppContextProviderValue: (state: AppContextState, dispatch: Reac
                 type: APP_REDUCER_ACTION_TYPE.CHANGE_APP_VIEW,
                 payload: {
                     ..._state,
-                    view: getPreviousAppView(_state.view)
-                }
+                    view: getPreviousAppView(_state.view),
+                },
             });
-        }
+        },
     };
 };

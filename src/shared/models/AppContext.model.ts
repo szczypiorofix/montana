@@ -1,5 +1,5 @@
-import { APP_REDUCER_ACTION_TYPE } from "../../storage/AppContext.reducer";
-import { APP_VIEW } from "../enums";
+import { APP_REDUCER_ACTION_TYPE } from '../../storage/AppContext.reducer';
+import { APP_VIEW } from '../enums';
 
 export interface AppContextState {
     version: string;

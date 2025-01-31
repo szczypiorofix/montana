@@ -1,4 +1,4 @@
-import { APP_VIEW } from "../shared/enums";
+import { APP_VIEW } from '../shared/enums';
 
 export interface NavListItem {
     id: APP_VIEW;

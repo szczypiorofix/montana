@@ -6,13 +6,16 @@ import { About, Contact, Home, Projects } from './pages';
 import { APP_VIEW } from './shared/enums';
 import { AppContext } from './storage/AppContext';
 import { appContextDefault } from './storage/AppContext.default';
-import { AppSettingsReducer, getAppContextProviderValue } from './storage/AppContext.reducer';
-import { HeaderComponent } from "./components/header/Header.component";
-import { ViewPortComponent } from "./components/viewport/ViewPort.component";
-import { InnerContentComponent } from "./components/inner-content/InnerContenr.component";
-import { ContentWrapperComponent } from "./components/content-wrapper/ContentWrapper.component";
-import { CogWheelComponent } from "./components/cogwheel/CogWheel.component";
-import { JSXElement } from "./shared/models";
+import {
+    AppSettingsReducer,
+    getAppContextProviderValue,
+} from './storage/AppContext.reducer';
+import { HeaderComponent } from './components/header/Header.component';
+import { ViewPortComponent } from './components/viewport/ViewPort.component';
+import { InnerContentComponent } from './components/inner-content/InnerContenr.component';
+import { ContentWrapperComponent } from './components/content-wrapper/ContentWrapper.component';
+import { CogWheelComponent } from './components/cogwheel/CogWheel.component';
+import { JSXElement } from './shared/models';
 
 import logo from './logo.png';
 
@@ -21,25 +24,25 @@ const navList: NavList = {
     items: [
         {
             id: APP_VIEW.HOME,
-            name: "Strona główna"
+            name: 'Strona główna',
         },
         {
             id: APP_VIEW.PROJECTS,
-            name: "Projekty"
+            name: 'Projekty',
         },
         {
             id: APP_VIEW.ABOUT,
-            name: "O mnie"
+            name: 'O mnie',
         },
         {
             id: APP_VIEW.CONTACT,
-            name: "Kontakt"
-        }
-    ]
+            name: 'Kontakt',
+        },
+    ],
 };
 
-export const App: () => JSXElement = (): JSXElement=> {
-    const [ state, dispatch ] = useReducer(AppSettingsReducer, appContextDefault);
+export const App: () => JSXElement = (): JSXElement => {
+    const [state, dispatch] = useReducer(AppSettingsReducer, appContextDefault);
 
     const appViewResolver: () => JSXElement = (): JSXElement => {
         switch (state.view) {
@@ -55,17 +58,16 @@ export const App: () => JSXElement = (): JSXElement=> {
     };
 
     return (
-        <AppContext.Provider value={ getAppContextProviderValue(state, dispatch) }>
+        <AppContext.Provider
+            value={getAppContextProviderValue(state, dispatch)}
+        >
             <CogWheelComponent />
             <ViewPortComponent>
-                <HeaderComponent logo={ logo }/>
+                <HeaderComponent logo={logo} />
                 <ContentWrapperComponent>
-                    <NavComponent
-                        list={ navList }
-                        visible={ true }
-                    />
+                    <NavComponent list={navList} visible={true} />
                     <InnerContentComponent>
-                        { appViewResolver() }
+                        {appViewResolver()}
                     </InnerContentComponent>
                 </ContentWrapperComponent>
             </ViewPortComponent>

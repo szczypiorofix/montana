@@ -21,23 +21,20 @@ const ViewPortWrapperStyled = styled.div`
     margin: 0 auto;
     overflow: auto;
 
-    &::-webkit-scrollbar-track
-    {
-        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
         border-radius: 10px;
-        background-color: #F5F5F5;
+        background-color: #f5f5f5;
     }
 
-    &::-webkit-scrollbar
-    {
+    &::-webkit-scrollbar {
         width: 12px;
-        background-color: #F5F5F5;
+        background-color: #f5f5f5;
     }
 
-    &::-webkit-scrollbar-thumb
-    {
+    &::-webkit-scrollbar-thumb {
         border-radius: 10px;
-        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
         background-color: #555;
     }
 `;

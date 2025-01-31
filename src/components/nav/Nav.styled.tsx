@@ -11,7 +11,7 @@ const NavStyled = styled.nav`
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-    
+
     //&:before {
     //    content: "";
     //    position: absolute;
@@ -54,7 +54,7 @@ const NavUlStyled = styled.ul`
     z-index: 10;
 `;
 
-const NavLiStyled= styled.li`
+const NavLiStyled = styled.li`
     width: 100%;
     color: #fff;
     font-size: 6px;
