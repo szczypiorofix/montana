@@ -1,9 +1,10 @@
-import { AppContextModel, AppContextState } from '../shared/models';
+import React from 'react';
+
 import {
     getNextAppView,
     getPreviousAppView,
 } from '../shared/helpers/AppViewResolver';
-import React from 'react';
+import { AppContextModel, AppContextState } from '../shared/models';
 
 export enum APP_REDUCER_ACTION_TYPE {
     CHANGE_APP_VIEW,

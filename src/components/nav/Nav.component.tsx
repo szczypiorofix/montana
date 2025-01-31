@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { NavComponentProps } from '../../models';
+import { JSXElement } from '../../shared/models';
 import { useGlobalAppContext } from '../../storage/AppContext';
 import {
     NavLiButtonStyled,
@@ -7,7 +9,6 @@ import {
     NavStyled,
     NavUlStyled,
 } from './Nav.styled';
-import { JSXElement } from '../../shared/models';
 
 export const NavComponent: (props: NavComponentProps) => JSXElement = (
     props: NavComponentProps

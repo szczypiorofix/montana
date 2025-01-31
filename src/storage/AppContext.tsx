@@ -5,10 +5,10 @@ import { appContextDefault } from './AppContext.default';
 
 export const AppContext = createContext<AppContextModel>({
     state: appContextDefault,
-    setState: () => {},
-    setAppView: () => {},
-    setNextAppView: () => {},
-    setPrevAppView: () => {},
+    setState: (): void => {},
+    setAppView: (): void => {},
+    setNextAppView: (): void => {},
+    setPrevAppView: (): void => {},
 });
 
 export const useGlobalAppContext = () => useContext(AppContext);

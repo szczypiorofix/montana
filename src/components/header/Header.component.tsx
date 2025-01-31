@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { HeaderComponentProps } from '../../models';
-import { HeaderStyled } from './Header.styled';
 import { JSXElement } from '../../shared/models';
+import { HeaderStyled } from './Header.styled';
 
 export const HeaderComponent: (props: HeaderComponentProps) => JSXElement = (
     props: HeaderComponentProps

@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-
 import '../../styles/variables.css';
+
+import styled from 'styled-components';
 
 const ContentWrapperStyled = styled.div`
     position: relative;

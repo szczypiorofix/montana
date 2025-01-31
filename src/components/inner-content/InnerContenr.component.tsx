@@ -1,7 +1,8 @@
 import React from 'react';
-import { InnerContentStyled } from './InnerContent.styled.';
+
 import { InnerContentComponentProps } from '../../models';
 import { JSXElement } from '../../shared/models';
+import { InnerContentStyled } from './InnerContent.styled.';
 
 export const InnerContentComponent: (
     props: InnerContentComponentProps

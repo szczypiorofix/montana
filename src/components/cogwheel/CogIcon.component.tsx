@@ -1,6 +1,7 @@
 import React from 'react';
-import { CogIconContainer, CogIconStyled } from './CogIcon.styled';
+
 import { JSXElement } from '../../shared/models';
+import { CogIconContainer, CogIconStyled } from './CogIcon.styled';
 
 export interface CogIconComponentProps {
     color: string;

@@ -1,23 +1,22 @@
 import React, { useReducer } from 'react';
 
+import { CogWheelComponent } from './components/cogwheel/CogWheel.component';
+import { ContentWrapperComponent } from './components/content-wrapper/ContentWrapper.component';
+import { HeaderComponent } from './components/header/Header.component';
+import { InnerContentComponent } from './components/inner-content/InnerContenr.component';
 import { NavComponent } from './components/nav/Nav.component';
+import { ViewPortComponent } from './components/viewport/ViewPort.component';
+import logo from './logo.png';
 import { NavList } from './models';
 import { About, Contact, Home, Projects } from './pages';
 import { APP_VIEW } from './shared/enums';
+import { JSXElement } from './shared/models';
 import { AppContext } from './storage/AppContext';
 import { appContextDefault } from './storage/AppContext.default';
 import {
     AppSettingsReducer,
     getAppContextProviderValue,
 } from './storage/AppContext.reducer';
-import { HeaderComponent } from './components/header/Header.component';
-import { ViewPortComponent } from './components/viewport/ViewPort.component';
-import { InnerContentComponent } from './components/inner-content/InnerContenr.component';
-import { ContentWrapperComponent } from './components/content-wrapper/ContentWrapper.component';
-import { CogWheelComponent } from './components/cogwheel/CogWheel.component';
-import { JSXElement } from './shared/models';
-
-import logo from './logo.png';
 
 const navList: NavList = {
     active: true,

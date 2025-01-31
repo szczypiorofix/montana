@@ -1,7 +1,8 @@
 import React from 'react';
+
 import { WrapperComponentProps } from '../../models';
-import { ContentWrapperStyled } from './ContentWrapper.styled';
 import { JSXElement } from '../../shared/models';
+import { ContentWrapperStyled } from './ContentWrapper.styled';
 
 export const ContentWrapperComponent: (
     props: WrapperComponentProps

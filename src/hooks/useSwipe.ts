@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import { Point } from '../shared/models/Point.model';
 
 export interface UseSwipeProps {

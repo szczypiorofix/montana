@@ -1,5 +1,5 @@
-import { JSXElement } from '../shared/models';
 import { ContainerComponent } from '../components/container/Container.component.';
+import { JSXElement } from '../shared/models';
 
 export const Home: () => JSXElement = (): JSXElement => {
     return (

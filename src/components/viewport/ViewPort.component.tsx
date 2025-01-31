@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { ViewPortStyled, ViewPortWrapperStyled } from './ViewPort.styled';
+
+import { useSwipe } from '../../hooks/useSwipe';
 import { ViewPortComponentProps } from '../../models';
 import { JSXElement } from '../../shared/models';
-import { useGlobalAppContext } from '../../storage/AppContext';
-import { useSwipe } from '../../hooks/useSwipe';
 import { Point } from '../../shared/models/Point.model';
+import { useGlobalAppContext } from '../../storage/AppContext';
+import { ViewPortStyled, ViewPortWrapperStyled } from './ViewPort.styled';
 
 enum ScrollType {
     NONE = 0,
