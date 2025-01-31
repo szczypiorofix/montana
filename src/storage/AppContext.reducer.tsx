@@ -3,7 +3,7 @@ import React from 'react';
 import {
     getNextAppView,
     getPreviousAppView,
-} from '../shared/helpers/AppViewResolver';
+} from '../shared/helpers';
 import { AppContextModel, AppContextState } from '../shared/models';
 
 export enum APP_REDUCER_ACTION_TYPE {

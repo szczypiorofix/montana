@@ -2,16 +2,11 @@ import React, { useEffect, useState } from 'react';
 
 import { useSwipe } from '../../hooks/useSwipe';
 import { ViewPortComponentProps } from '../../models';
+import { ScrollType } from '../../shared/enums';
 import { JSXElement } from '../../shared/models';
 import { Point } from '../../shared/models/Point.model';
 import { useGlobalAppContext } from '../../storage/AppContext';
 import { ViewPortStyled, ViewPortWrapperStyled } from './ViewPort.styled';
-
-enum ScrollType {
-    NONE = 0,
-    UP = -1,
-    DOWN = 1,
-}
 
 export const ViewPortComponent: (
     props: ViewPortComponentProps
