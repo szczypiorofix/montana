@@ -39,4 +39,4 @@ const CogIconContainer = styled.div`
     z-index: -10;
 `;
 
-export { CogIconContainer,CogIconStyled };
+export { CogIconContainer, CogIconStyled };
