@@ -20,10 +20,10 @@ export const AppSettingsReducer = (
 ): AppContextState => {
     const { type, payload } = action;
     switch (type) {
-    case APP_REDUCER_ACTION_TYPE.CHANGE_APP_VIEW:
-        return { ...prevState, view: payload.view };
-    default:
-        return prevState;
+        case APP_REDUCER_ACTION_TYPE.CHANGE_APP_VIEW:
+            return { ...prevState, view: payload.view };
+        default:
+            return prevState;
     }
 };
 

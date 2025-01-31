@@ -17,7 +17,7 @@ export default tseslint.config(
         },
         rules: {
             semi: 'error',
-            indent: 'error',
+            indent: ['error', 4, { SwitchCase: 1 }],
         },
     }
 );
