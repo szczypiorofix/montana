@@ -1,0 +1,13 @@
+:root {
+    /** ---------- COLORS ---------- */
+    --PrimaryDarkColor: #0c0c0c;
+    --PrimaryWhiteColor: #f2f2f2;
+    --SecondaryWhiteColor: #dddddd;
+    --SecondaryDarkColor: #333333;
+    --PrimaryAccentColor: #0f33ff;
+    --SecondaryAccentColor: #0b8256;
+    --BackgroundCogWheelColor: rgba(0, 0, 0, 0.9);
+
+    /** ---------- SIZES ---------- */
+    --headerHeight: 120px;
+}

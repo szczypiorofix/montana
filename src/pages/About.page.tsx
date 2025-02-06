@@ -1,9 +1,10 @@
-import React from 'react';
+import { ContainerComponent } from '../components/container/Container.component.';
+import { JSXElement } from '../shared/models';
 
-export const About = (): React.JSX.Element => {
+export const About: () => JSXElement = (): JSXElement => {
     return (
-        <div>
+        <ContainerComponent>
             <p>About components</p>
-        </div>
+        </ContainerComponent>
     );
-}
+};
