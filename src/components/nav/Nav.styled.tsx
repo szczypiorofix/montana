@@ -71,8 +71,11 @@ const NavLiButtonStyled = styled.button`
     border: none;
     cursor: pointer;
     padding: 14px 16px;
-    font-size: 14px;
+    font-size: 2.2em;
     width: 100%;
+    border-radius: 3px;
+    font-weight: 500;
+    font-family: inherit;
     transition: all 0.15s ease-in-out;
     &.active {
         background-color: var(--PrimaryAccentColor);

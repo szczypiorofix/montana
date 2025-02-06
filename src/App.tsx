@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import { useReducer } from 'react';
 
 import { CogWheelComponent } from './components/cogwheel/CogWheel.component';
 import { ContentWrapperComponent } from './components/content-wrapper/ContentWrapper.component';
