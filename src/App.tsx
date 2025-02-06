@@ -6,7 +6,7 @@ import { HeaderComponent } from './components/header/Header.component';
 import { InnerContentComponent } from './components/inner-content/InnerContenr.component';
 import { NavComponent } from './components/nav/Nav.component';
 import { ViewPortComponent } from './components/viewport/ViewPort.component';
-import logo from './logo.png';
+import logo from './assets/logo.png';
 import { NavList } from './models';
 import { About, Contact, Home, Projects } from './pages';
 import { APP_VIEW } from './shared/enums';
