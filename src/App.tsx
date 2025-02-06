@@ -1,73 +1,73 @@
-import React, { useReducer } from 'react';
+import { useReducer } from 'react';
 
-import { NavComponent } from './components/nav.component';
+import { CogWheelComponent } from './components/cogwheel/CogWheel.component';
+import { ContentWrapperComponent } from './components/content-wrapper/ContentWrapper.component';
+import { HeaderComponent } from './components/header/Header.component';
+import { InnerContentComponent } from './components/inner-content/InnerContenr.component';
+import { NavComponent } from './components/nav/Nav.component';
+import { ViewPortComponent } from './components/viewport/ViewPort.component';
+import logo from './assets/logo.png';
 import { NavList } from './models';
 import { About, Contact, Home, Projects } from './pages';
-import { APP_VIEW } from './shared/enums/AppView.enum';
+import { APP_VIEW } from './shared/enums';
+import { JSXElement } from './shared/models';
 import { AppContext } from './storage/AppContext';
 import { appContextDefault } from './storage/AppContext.default';
 import { AppSettingsReducer } from './storage/AppContext.reducer';
+import { getAppContextProviderValue } from './storage/AppContext.provider.ts';
 
 const navList: NavList = {
     active: true,
     items: [
         {
             id: APP_VIEW.HOME,
-            name: "Strona główna"
+            name: 'Strona główna',
         },
         {
             id: APP_VIEW.PROJECTS,
-            name: "Projekty"
+            name: 'Projekty',
         },
         {
             id: APP_VIEW.ABOUT,
-            name: "O mnie"
+            name: 'O mnie',
         },
         {
             id: APP_VIEW.CONTACT,
-            name: "Kontakt"
-        }
-    ]
-}
+            name: 'Kontakt',
+        },
+    ],
+};
 
-export const App = (): React.JSX.Element => {  
-    const [ state, dispatch ] = useReducer(AppSettingsReducer, appContextDefault);
+export const App: () => JSXElement = (): JSXElement => {
+    const [state, dispatch] = useReducer(AppSettingsReducer, appContextDefault);
 
-    const appViewResolver = (): React.JSX.Element => {
-        switch(state.view) {
+    const appViewResolver: () => JSXElement = (): JSXElement => {
+        switch (state.view) {
             case APP_VIEW.CONTACT:
-                return <Contact></Contact>
+                return <Contact></Contact>;
             case APP_VIEW.PROJECTS:
-                return <Projects></Projects>
+                return <Projects></Projects>;
             case APP_VIEW.ABOUT:
-                return <About></About>
+                return <About></About>;
             default: // Home
-                return <Home></Home>
+                return <Home></Home>;
         }
-    }
-    
+    };
+
     return (
         <AppContext.Provider
-            value={{
-                state: state,
-                setState(_state, _type) {
-                    dispatch(
-                        {
-                            type: _type,
-                            payload: _state
-                        }
-                    )
-                },
-            }}
+            value={getAppContextProviderValue(state, dispatch)}
         >
-            <div>
-                <NavComponent
-                    list={navList}
-                />
-            </div>
-            <div className="App">
-                { appViewResolver() }
-            </div>
+            <CogWheelComponent />
+            <ViewPortComponent>
+                <HeaderComponent logo={logo} />
+                <ContentWrapperComponent>
+                    <NavComponent list={navList} visible={true} />
+                    <InnerContentComponent>
+                        {appViewResolver()}
+                    </InnerContentComponent>
+                </ContentWrapperComponent>
+            </ViewPortComponent>
         </AppContext.Provider>
     );
-}
+};

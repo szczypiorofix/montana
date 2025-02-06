@@ -1,9 +1,11 @@
-import React from 'react';
+import { ContainerComponent } from '../components/container/Container.component.';
+import { JSXElement } from '../shared/models';
 
-export const Home = (): React.JSX.Element => {
+export const Home: () => JSXElement = (): JSXElement => {
     return (
-        <div>
+        <ContainerComponent>
             <p>Home components</p>
-        </div>
+            <div>Coś o projektach ...</div>
+        </ContainerComponent>
     );
-}
+};

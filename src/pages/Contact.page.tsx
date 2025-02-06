@@ -1,9 +1,10 @@
-import React from 'react';
+import { ContainerComponent } from '../components/container/Container.component.';
+import { JSXElement } from '../shared/models';
 
-export const Contact = (): React.JSX.Element => {
+export const Contact: () => JSXElement = (): JSXElement => {
     return (
-        <div>
+        <ContainerComponent>
             <p>Contact components</p>
-        </div>
+        </ContainerComponent>
     );
-}
+};
