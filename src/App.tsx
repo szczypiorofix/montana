@@ -13,10 +13,8 @@ import { APP_VIEW } from './shared/enums';
 import { JSXElement } from './shared/models';
 import { AppContext } from './storage/AppContext';
 import { appContextDefault } from './storage/AppContext.default';
-import {
-    AppSettingsReducer,
-    getAppContextProviderValue,
-} from './storage/AppContext.reducer';
+import { AppSettingsReducer } from './storage/AppContext.reducer';
+import { getAppContextProviderValue } from './storage/AppContext.provider.ts';
 
 const navList: NavList = {
     active: true,

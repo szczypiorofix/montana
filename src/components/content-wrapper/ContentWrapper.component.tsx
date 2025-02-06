@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { WrapperComponentProps } from '../../models';
 import { JSXElement } from '../../shared/models';
 import { ContentWrapperStyled } from './ContentWrapper.styled';

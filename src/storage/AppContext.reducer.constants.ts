@@ -1,0 +1,3 @@
+export enum APP_REDUCER_ACTION_TYPE {
+    CHANGE_APP_VIEW,
+}

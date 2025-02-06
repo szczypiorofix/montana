@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { ContainerComponentProps } from '../../models';
 import { JSXElement } from '../../shared/models';
 import { ContainerStyled } from './Container.styled';

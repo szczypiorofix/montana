@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { HeaderComponentProps } from '../../models';
 import { JSXElement } from '../../shared/models';
 import { HeaderStyled } from './Header.styled';

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { NavComponentProps } from '../../models';
 import { JSXElement } from '../../shared/models';
 import { useGlobalAppContext } from '../../storage/AppContext';

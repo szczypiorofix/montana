@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { PrimaryAccentColorBlue } from '../../shared/costants';
 import { JSXElement } from '../../shared/models';
 import { CogIconComponent } from './CogIcon.component';

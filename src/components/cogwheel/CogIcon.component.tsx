@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { JSXElement } from '../../shared/models';
 import { CogIconContainer, CogIconStyled } from './CogIcon.styled';
 

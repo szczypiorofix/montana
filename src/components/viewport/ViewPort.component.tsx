@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { useSwipe } from '../../hooks/useSwipe';
 import { ViewPortComponentProps } from '../../models';
