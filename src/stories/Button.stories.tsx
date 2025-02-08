@@ -1,14 +1,14 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 import { ComponentProps } from 'react';
-import { ButtonComponent as Button } from '../components/button/Button.component.tsx';
+import { ButtonComponent } from '../components/button/Button.component.tsx';
 
-type StoryProps = ComponentProps<typeof Button> & {
+type StoryProps = ComponentProps<typeof ButtonComponent> & {
     buttonText: string;
 };
 
 const meta: Meta<StoryProps> = {
-    component: Button,
+    component: ButtonComponent,
     tags: ['autodocs'],
     argTypes: {
         variant: {
@@ -40,7 +40,7 @@ export const Primary: Story = {
         size: 'md',
     },
     render: ({ buttonText, ...args }) => {
-        return <Button {...args}>{buttonText}</Button>;
+        return <ButtonComponent {...args}>{buttonText}</ButtonComponent>;
     },
 };
 
@@ -51,6 +51,6 @@ export const Secondary: Story = {
         size: 'md',
     },
     render: ({ buttonText, ...args }) => {
-        return <Button {...args}>{buttonText}</Button>;
+        return <ButtonComponent {...args}>{buttonText}</ButtonComponent>;
     },
 };
