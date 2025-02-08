@@ -1,5 +1,5 @@
-import { render } from '@testing-library/react';
+import { test, expect } from 'vitest';
 
-test('renders sample div', () => {
-    render(<div></div>);
+test('temporary test, test true to by true', () => {
+    expect(true).toBeTruthy();
 });

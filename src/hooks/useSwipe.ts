@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Point } from '../shared/models/Point.model';
+import { Point } from '../shared/models';
 
 export interface UseSwipeProps {
     returnDelta(delta: Point): void;
