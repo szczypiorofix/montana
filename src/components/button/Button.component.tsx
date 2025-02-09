@@ -4,7 +4,7 @@ import { CSSProperties, PropsWithChildren } from 'react';
 type ButtonProps = PropsWithChildren<{
     onClick?: () => void;
     variant: 'primary' | 'secondary';
-    size: 'sm' | 'md' | 'lg';
+    size: 'xs' | 'sm' | 'md' | 'lg';
 }>;
 
 export const ButtonComponent = ({
@@ -23,6 +23,9 @@ export const ButtonComponent = ({
     };
 
     const sizeStyles: Record<ButtonProps['size'], CSSProperties> = {
+        xs: {
+            padding: '0.25rem',
+        },
         sm: {
             padding: '0.5rem',
         },
@@ -37,10 +40,6 @@ export const ButtonComponent = ({
     return (
         <ButtonStyled
             style={{
-                outline: 'none',
-                border: 'none',
-                cursor: 'pointer',
-                borderRadius: 10,
                 ...variantStyles[variant],
                 ...sizeStyles[size],
             }}

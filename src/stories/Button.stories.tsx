@@ -3,11 +3,11 @@ import { fn } from '@storybook/test';
 import { ComponentProps } from 'react';
 import { ButtonComponent } from '../components/button/Button.component.tsx';
 
-type StoryProps = ComponentProps<typeof ButtonComponent> & {
-    buttonText: string;
+type ButtonStoryProps = ComponentProps<typeof ButtonComponent> & {
+    contentText: string;
 };
 
-const meta: Meta<StoryProps> = {
+const meta: Meta<ButtonStoryProps> = {
     component: ButtonComponent,
     tags: ['autodocs'],
     argTypes: {
@@ -18,7 +18,7 @@ const meta: Meta<StoryProps> = {
             },
         },
         size: {
-            options: ['sm', 'md', 'lg'],
+            options: ['xs', 'sm', 'md', 'lg'],
             control: {
                 type: 'select',
             },
@@ -31,26 +31,26 @@ const meta: Meta<StoryProps> = {
 
 export default meta;
 
-type Story = StoryObj<StoryProps>;
+type Story = StoryObj<ButtonStoryProps>;
 
 export const Primary: Story = {
     args: {
-        buttonText: 'Hello',
+        contentText: 'Primary button content',
         variant: 'primary',
         size: 'md',
     },
-    render: ({ buttonText, ...args }) => {
-        return <ButtonComponent {...args}>{buttonText}</ButtonComponent>;
+    render: ({ contentText, ...args }) => {
+        return <ButtonComponent {...args}>{contentText}</ButtonComponent>;
     },
 };
 
 export const Secondary: Story = {
     args: {
-        buttonText: 'Hello',
+        contentText: 'Secondary button content',
         variant: 'secondary',
         size: 'md',
     },
-    render: ({ buttonText, ...args }) => {
-        return <ButtonComponent {...args}>{buttonText}</ButtonComponent>;
+    render: ({ contentText, ...args }) => {
+        return <ButtonComponent {...args}>{contentText}</ButtonComponent>;
     },
 };
