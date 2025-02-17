@@ -1,5 +1,10 @@
-import { test, expect } from 'vitest';
+import { screen, render } from '@testing-library/react';
+import { describe, it, expect } from 'vitest';
+import { App } from './App';
 
-test('temporary test, test true to by true', () => {
-    expect(true).toBeTruthy();
+describe('App', () => {
+    it('renders main App component', () => {
+        render(<App />);
+        expect(screen.getByText(/Home components/i)).toBeInTheDocument();
+    });
 });
