@@ -24,6 +24,8 @@ export const NavComponent: (props: NavComponentProps) => JSXElement = (
                                     setAppView({
                                         ...state,
                                         view: navItem.id,
+                                        animationToTop:
+                                            index < state.view.valueOf(),
                                     })
                                 }
                                 className={

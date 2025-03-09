@@ -31,6 +31,7 @@ export const getAppContextProviderValue: (
                 payload: {
                     ..._state,
                     view: getNextAppView(_state.view),
+                    animationToTop: true,
                 },
             });
         },
@@ -40,6 +41,7 @@ export const getAppContextProviderValue: (
                 payload: {
                     ..._state,
                     view: getPreviousAppView(_state.view),
+                    animationToTop: false,
                 },
             });
         },
