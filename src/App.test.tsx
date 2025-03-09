@@ -1,5 +1,10 @@
-import { render } from '@testing-library/react';
+import { screen, render } from '@testing-library/react';
+import { describe, it, expect } from 'vitest';
+import { App } from './App';
 
-test('renders sample div', () => {
-    render(<div></div>);
+describe('App', () => {
+    it('renders main App component', () => {
+        render(<App />);
+        expect(screen.getByText(/Home components/i)).toBeInTheDocument();
+    });
 });

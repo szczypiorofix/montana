@@ -5,4 +5,5 @@ export const appContextDefault: AppContextState = {
     version: '0.0.2',
     reload: false,
     view: APP_VIEW.HOME,
+    animationToTop: false,
 };

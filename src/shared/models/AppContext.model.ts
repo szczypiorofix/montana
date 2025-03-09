@@ -5,6 +5,7 @@ export interface AppContextState {
     version: string;
     reload: boolean;
     view: APP_VIEW;
+    animationToTop: boolean;
 }
 
 export interface AppContextModel {

@@ -7,25 +7,11 @@ const NavStyled = styled.nav`
     display: -ms-flexbox;
     display: flex;
     height: calc(100% - var(--headerHeight));
+    padding-right: 6px;
     -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-
-    //&:before {
-    //    content: "";
-    //    position: absolute;
-    //    top: 50%;
-    //    left: 0;
-    //    -webkit-transform: translateY(-50%);
-    //    transform: translateY(-50%);
-    //    width: 2px;
-    //    height: 70%;
-    //    max-height: 750px;
-    //    background-color: #555;
-    //    opacity: .35;
-    //    z-index: 10;
-    //}
 `;
 
 const NavUlStyled = styled.ul`

@@ -3,8 +3,7 @@ import { useEffect, useState } from 'react';
 import { useSwipe } from '../../hooks/useSwipe';
 import { ViewPortComponentProps } from '../../models';
 import { ScrollType } from '../../shared/enums';
-import { JSXElement } from '../../shared/models';
-import { Point } from '../../shared/models/Point.model';
+import { JSXElement, Point } from '../../shared/models';
 import { useGlobalAppContext } from '../../storage/AppContext';
 import { ViewPortStyled, ViewPortWrapperStyled } from './ViewPort.styled';
 

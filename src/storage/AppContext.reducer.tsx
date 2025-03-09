@@ -13,7 +13,11 @@ export const AppSettingsReducer = (
     const { type, payload } = action;
     switch (type) {
         case APP_REDUCER_ACTION_TYPE.CHANGE_APP_VIEW:
-            return { ...prevState, view: payload.view };
+            return {
+                ...prevState,
+                view: payload.view,
+                animationToTop: payload.animationToTop,
+            };
         default:
             return prevState;
     }
