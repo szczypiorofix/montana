@@ -1,28 +1,53 @@
 :root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
     line-height: 1.5;
     font-weight: 400;
 
     color-scheme: light dark;
-    color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    /** ---------- COLORS ---------- */
+    --MyrtieGreen: #587B7F;
+    --EerieBlack: #1E2019;
+    --BlackOlive: #394032;
+    --Olivine: #8DAB7F;
+    --Mindaro: #CFEE9E;
+
+    /** ---------- SIZES ---------- */
+    --logoHeightNormal: 100px;
+    --logoHeightSmall: 80px;
 }
 
 html,
 body {
     margin: 0;
     padding: 0;
-    /** font-family: 'Lato', serif; */
+    font-family: "Roboto Mono", monospace;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}
+    color: var(--Mindaro);
+    background-color: var(--EerieBlack);
 
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-        monospace;
+    &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px var(--EerieBlack);
+        border-radius: 10px;
+        background-color: var(--MyrtieGreen);
+    }
+
+    &::-webkit-scrollbar {
+        width: 12px;
+        background-color: var(--MyrtieGreen);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        background-color: #555;
+    }
 }

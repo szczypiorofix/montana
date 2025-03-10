@@ -1,73 +1,53 @@
-import { useReducer } from 'react';
+import { RefObject, useRef } from 'react';
 
-import { CogWheelComponent } from './components/cogwheel/CogWheel.component';
-import { ContentWrapperComponent } from './components/content-wrapper/ContentWrapper.component';
-import { HeaderComponent } from './components/header/Header.component';
-import { InnerContentComponent } from './components/inner-content/InnerContenr.component';
-import { NavComponent } from './components/nav/Nav.component';
-import { ViewPortComponent } from './components/viewport/ViewPort.component';
-import logo from './assets/logo.png';
-import { NavList } from './models';
-import { About, Contact, Home, Projects } from './pages';
-import { APP_VIEW } from './shared/enums';
-import { JSXElement } from './shared/models';
-import { AppContext } from './storage/AppContext';
-import { appContextDefault } from './storage/AppContext.default';
-import { AppSettingsReducer } from './storage/AppContext.reducer';
-import { getAppContextProviderValue } from './storage/AppContext.provider.ts';
+import { JSXElement, NavBarLinkItem } from './shared/models';
+import { AboutMe, Projects, Contact } from './parts';
+import { NavBarComponent } from './components/navbar/NavBar.component.tsx';
+import { ViewPortComponent } from './components/viewport/ViewPort.component.tsx';
+import { ContainerComponent } from './components/container/Container.component.tsx';
+import { NavPath } from './shared/enums';
+import { Footer } from './components/footer/Footer.tsx';
 
-const navList: NavList = {
-    active: true,
-    items: [
+export function App(): JSXElement {
+    const aboutMeRef = useRef(null);
+    const projectsRef = useRef(null);
+    const contactRef = useRef(null);
+
+    const navBarLinksItems: NavBarLinkItem[] = [
         {
-            id: APP_VIEW.HOME,
-            name: 'Strona główna',
+            name: '<o mnie>',
+            link: NavPath.ABOUT_ME,
+            ref: aboutMeRef,
         },
         {
-            id: APP_VIEW.PROJECTS,
-            name: 'Projekty',
+            name: '<projekty>',
+            link: NavPath.PROJECTS,
+            ref: projectsRef,
         },
         {
-            id: APP_VIEW.ABOUT,
-            name: 'O mnie',
+            name: '<kontakt>',
+            link: NavPath.CONTACT,
+            ref: contactRef,
         },
-        {
-            id: APP_VIEW.CONTACT,
-            name: 'Kontakt',
-        },
-    ],
-};
+    ];
 
-export const App: () => JSXElement = (): JSXElement => {
-    const [state, dispatch] = useReducer(AppSettingsReducer, appContextDefault);
-
-    const appViewResolver: () => JSXElement = (): JSXElement => {
-        switch (state.view) {
-            case APP_VIEW.CONTACT:
-                return <Contact></Contact>;
-            case APP_VIEW.PROJECTS:
-                return <Projects></Projects>;
-            case APP_VIEW.ABOUT:
-                return <About></About>;
-            default: // Home
-                return <Home></Home>;
+    const scrollToTarget = (target: RefObject<HTMLDivElement | null>) => {
+        if (target.current) {
+            target.current.scrollIntoView({ behavior: 'smooth' });
         }
     };
-
     return (
-        <AppContext.Provider
-            value={getAppContextProviderValue(state, dispatch)}
-        >
-            <CogWheelComponent />
+        <ContainerComponent>
+            <NavBarComponent
+                navLinkItems={navBarLinksItems}
+                onClick={(ref) => scrollToTarget(ref)}
+            />
             <ViewPortComponent>
-                <HeaderComponent logo={logo} />
-                <ContentWrapperComponent>
-                    <NavComponent list={navList} visible={true} />
-                    <InnerContentComponent>
-                        {appViewResolver()}
-                    </InnerContentComponent>
-                </ContentWrapperComponent>
+                <AboutMe ref={aboutMeRef} />
+                <Projects ref={projectsRef} />
+                <Contact ref={contactRef} />
             </ViewPortComponent>
-        </AppContext.Provider>
+            <Footer />
+        </ContainerComponent>
     );
-};
+}
