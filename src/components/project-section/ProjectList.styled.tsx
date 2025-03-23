@@ -7,6 +7,7 @@ const ProjectListStyled = styled.ul`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
+    margin: 0;
 `;
 
 export { ProjectListStyled };

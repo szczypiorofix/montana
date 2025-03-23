@@ -10,32 +10,27 @@ export function ContactForm() {
 
     return <div>
         <H2Styled $textAlign={"center"}>Napisz wiadomość:</H2Styled>
-        <ContactFormStyled>
+        <ContactFormStyled
+            onSubmit={(e) => {
+                console.log("Submit form");
+                e.preventDefault();
+                e.stopPropagation();
+            }}
+        >
             <ContactFormGroupStyled>
                 <ContactFormLabelStyled>Imię:</ContactFormLabelStyled>
-                <ContactFormTextInputStyled type="text"></ContactFormTextInputStyled>
+                <ContactFormTextInputStyled type="text" required={true}></ContactFormTextInputStyled>
             </ContactFormGroupStyled>
             <ContactFormGroupStyled>
                 <ContactFormLabelStyled>Email:</ContactFormLabelStyled>
-                <ContactFormTextInputStyled type="email"></ContactFormTextInputStyled>
+                <ContactFormTextInputStyled type="email" required={true}></ContactFormTextInputStyled>
             </ContactFormGroupStyled>
             <ContactFormGroupStyled>
                 <ContactFormLabelStyled>Treść:</ContactFormLabelStyled>
-                <ContactFormTextareaStyled></ContactFormTextareaStyled>
+                <ContactFormTextareaStyled required={true}></ContactFormTextareaStyled>
             </ContactFormGroupStyled>
             <ContactFormGroupStyled>
-                <ContactFormSubmitButtonStyled
-                    onSubmit={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                    }}
-                    onClick={(e) => {
-                        console.log('Submit...');
-                        e.preventDefault();
-                        e.stopPropagation();
-                    }}
-                    type="submit"
-                >Wyślij</ContactFormSubmitButtonStyled>
+                <ContactFormSubmitButtonStyled type={"submit"}>Wyślij</ContactFormSubmitButtonStyled>
             </ContactFormGroupStyled>
         </ContactFormStyled>
     </div>

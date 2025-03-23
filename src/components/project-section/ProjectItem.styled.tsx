@@ -6,10 +6,16 @@ const ProjectItemStyled = styled.li`
     display: block;
     color: var(--Mindaro);
     border: 1px solid var(--BlackOlive);
-    height: 200px;
+    height: 240px;
     width: 200px;
     margin-left: 12px;
     margin-right: 12px;
+    user-select: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+        border-color: var(--Olivine);
+    }
 `;
 
 const ProjectItemTitleStyled = styled.h3`
@@ -18,7 +24,7 @@ const ProjectItemTitleStyled = styled.h3`
 `;
 
 const ProjectItemDescriptionStyled = styled.p`
-    
+    font-size: 14px;
 `;
 
 export { ProjectItemStyled, ProjectItemTitleStyled, ProjectItemDescriptionStyled };
