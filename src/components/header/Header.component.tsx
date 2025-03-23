@@ -1,13 +1,14 @@
-import { HeaderComponentProps } from '../../models';
 import { JSXElement } from '../../shared/models';
 import { HeaderStyled } from './Header.styled';
 
-export const HeaderComponent: (props: HeaderComponentProps) => JSXElement = (
-    props: HeaderComponentProps
-): JSXElement => {
+interface HeaderComponentProps {
+    logo: string;
+}
+
+export function HeaderComponent(props: HeaderComponentProps): JSXElement {
     return (
-        <HeaderStyled>
+        <HeaderStyled $smallLogo={false}>
             <img src={props.logo} alt='logo' />
         </HeaderStyled>
     );
-};
+}

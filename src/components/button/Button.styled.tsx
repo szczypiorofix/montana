@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import '../../styles/variables.css';
-
 const ButtonStyled = styled.button`
     border: none;
     outline: none;
@@ -11,7 +9,7 @@ const ButtonStyled = styled.button`
     cursor: pointer;
     font-size: 0.9em;
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    color: var(--PrimaryWhiteColor);
+    color: var(--Mindaro);
 `;
 
 export { ButtonStyled };

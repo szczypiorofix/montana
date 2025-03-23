@@ -1,2 +1,1 @@
-export * from './AppView.enum';
-export * from './ScrollType.enum';
+export * from './NavPath.enum';

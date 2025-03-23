@@ -7,12 +7,12 @@ type ButtonProps = PropsWithChildren<{
     size: 'xs' | 'sm' | 'md' | 'lg';
 }>;
 
-export const ButtonComponent = ({
+export function ButtonComponent({
     children,
     onClick,
     variant = 'primary',
     size = 'md',
-}: ButtonProps) => {
+}: ButtonProps) {
     const variantStyles: Record<ButtonProps['variant'], CSSProperties> = {
         primary: {
             backgroundColor: 'blue',
@@ -48,4 +48,4 @@ export const ButtonComponent = ({
             {children}
         </ButtonStyled>
     );
-};
+}

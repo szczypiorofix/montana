@@ -1,42 +1,30 @@
-import '../../styles/variables.css';
-
 import styled from 'styled-components';
+import { deviceSize } from '../../shared/costants/ResponsiveSizes.tsx';
 
 const ViewPortStyled = styled.div`
     position: relative;
-    width: 100%;
-    height: 100vh;
-    box-shadow: 0 0 45px 5px var(--PrimaryDarkColor);
-    background-color: var(--BackgroundCogWheelColor);
-    color: var(--PrimaryWhiteColor);
     display: block;
-    overflow: hidden;
-`;
-
-const ViewPortWrapperStyled = styled.div`
-    position: relative;
-    width: 1440px;
-    max-width: 90%;
-    height: 100%;
+    width: 98%;
     margin: 0 auto;
-    overflow: auto;
-
-    &::-webkit-scrollbar-track {
-        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-        border-radius: 10px;
-        background-color: #f5f5f5;
+    
+    @media ${deviceSize.xs} {
+        width: 92%;
     }
-
-    &::-webkit-scrollbar {
-        width: 12px;
-        background-color: #f5f5f5;
+    @media ${deviceSize.sm} {
+        width: 96%;
     }
-
-    &::-webkit-scrollbar-thumb {
-        border-radius: 10px;
-        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-        background-color: #555;
+    @media ${deviceSize.md} {
+        width: 82%;
+    }
+    @media ${deviceSize.lg} {
+        width: 72%;
+    }
+    @media ${deviceSize.xl} {
+        width: 66%;
+    }
+    @media ${deviceSize.xxl} {
+        width: 62%;
     }
 `;
 
-export { ViewPortStyled, ViewPortWrapperStyled };
+export { ViewPortStyled };

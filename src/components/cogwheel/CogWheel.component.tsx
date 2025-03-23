@@ -3,7 +3,7 @@ import { JSXElement } from '../../shared/models';
 import { CogIconComponent } from './CogIcon.component';
 import { CogWheelStyled } from './CogWheel.styled';
 
-export const CogWheelComponent: () => JSXElement = (): JSXElement => {
+export function CogWheelComponent(): JSXElement {
     return (
         <CogWheelStyled>
             <CogIconComponent
@@ -13,4 +13,4 @@ export const CogWheelComponent: () => JSXElement = (): JSXElement => {
             />
         </CogWheelStyled>
     );
-};
+}
