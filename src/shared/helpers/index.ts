@@ -1,1 +1,1 @@
-export * from './AppViewResolver';
+export * from './ScreenSizeHelper';

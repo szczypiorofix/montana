@@ -7,9 +7,7 @@ export interface CogIconComponentProps {
     size?: number;
 }
 
-export const CogIconComponent: (props: CogIconComponentProps) => JSXElement = (
-    props: CogIconComponentProps
-): JSXElement => {
+export function CogIconComponent(props: CogIconComponentProps): JSXElement {
     return (
         <CogIconContainer>
             <CogIconStyled
@@ -35,4 +33,4 @@ export const CogIconComponent: (props: CogIconComponentProps) => JSXElement = (
             </CogIconStyled>
         </CogIconContainer>
     );
-};
+}
