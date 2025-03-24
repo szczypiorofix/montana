@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { deviceSize } from '../../shared/costants/ResponsiveSizes.tsx';
+import { deviceSize } from '../../shared/costants/ResponsiveSizes';
 
 const ViewPortStyled = styled.div`
     position: relative;
