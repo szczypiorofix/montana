@@ -1,4 +1,4 @@
-import { FooterContainer, FooterContent } from './Footer.styled.tsx';
+import { FooterContainer, FooterContent } from './Footer.styled';
 
 export function Footer() {
     const currentYear = new Date().getFullYear();

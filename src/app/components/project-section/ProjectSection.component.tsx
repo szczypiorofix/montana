@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react';
-import { ProjectSectionContainer, ProjectSectionHeading } from './ProjectSection.styled.tsx';
+import { ProjectSectionContainer, ProjectSectionHeading } from './ProjectSection.styled';
 
 interface ProjectSectionProps extends PropsWithChildren {
     title: string;

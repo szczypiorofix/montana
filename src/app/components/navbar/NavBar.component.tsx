@@ -3,7 +3,7 @@ import {
     NavBarList,
     NavBarListItem,
     NavBarRight,
-} from './NavBar.styled.tsx';
+} from './NavBar.styled';
 import { NavBarLinkItem } from '../../shared/models';
 import { RefObject } from 'react';
 
