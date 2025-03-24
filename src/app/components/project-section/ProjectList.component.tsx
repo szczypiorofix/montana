@@ -1,6 +1,6 @@
-import { ProjectItem } from '../../shared/models/ProjectItem.model.ts';
-import { ProjectItemComponent } from './ProjectItem.component.tsx';
-import { ProjectListStyled } from './ProjectList.styled.tsx';
+import { ProjectItem } from '../../shared/models/ProjectItem.model';
+import { ProjectItemComponent } from './ProjectItem.component';
+import { ProjectListStyled } from './ProjectList.styled';
 
 interface ProjectSectionComponentProps {
     projects: ProjectItem[];

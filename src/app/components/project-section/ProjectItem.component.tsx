@@ -1,5 +1,5 @@
-import { ProjectItem } from '../../shared/models/ProjectItem.model.ts';
-import { ProjectItemDescriptionStyled, ProjectItemStyled, ProjectItemTitleStyled } from './ProjectItem.styled.tsx';
+import { ProjectItem } from '../../shared/models/ProjectItem.model';
+import { ProjectItemDescriptionStyled, ProjectItemStyled, ProjectItemTitleStyled } from './ProjectItem.styled';
 
 export function ProjectItemComponent(props: ProjectItem) {
     return <ProjectItemStyled>
