@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { deviceSize } from '../../shared/costants/ResponsiveSizes.tsx';
+import { deviceSize } from '../../shared/costants/ResponsiveSizes';
 
 const ContactFormStyled = styled.form`
     width: 100%;
