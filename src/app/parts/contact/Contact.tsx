@@ -1,7 +1,7 @@
-import { ContactStyledContainer } from './Contact.styled.tsx';
-import { ContactForm } from './ContactForm.tsx';
-import { PagePartProps } from '../../shared/models/PagePartProps.ts';
-import { H1Styled } from '../../components/Typography.styled.tsx';
+import { ContactStyledContainer } from './Contact.styled';
+import { ContactForm } from './ContactForm';
+import { PagePartProps } from '../../shared/models/PagePartProps';
+import { H1Styled } from '../../components/Typography.styled';
 
 export function Contact(props: PagePartProps) {
     return (

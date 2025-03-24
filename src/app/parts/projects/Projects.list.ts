@@ -1,4 +1,4 @@
-import { ProjectItem } from '../../shared/models/ProjectItem.model.ts';
+import { ProjectItem } from '../../shared/models/ProjectItem.model';
 
 export const jsTsProjects: ProjectItem[] = [
     {
