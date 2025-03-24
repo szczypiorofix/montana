@@ -1,6 +1,6 @@
-import { AboutMeStyledContainer } from './AboutMe.styled.tsx';
-import { PagePartProps } from '../../shared/models/PagePartProps.ts';
-import { H2Styled, H3Styled, PartHeader, TechStackLiStyled, TechStackUlStyled } from '../../components/Typography.styled.tsx';
+import { AboutMeStyledContainer } from './AboutMe.styled';
+import { PagePartProps } from '../../shared/models/PagePartProps';
+import { H2Styled, H3Styled, PartHeader, TechStackLiStyled, TechStackUlStyled } from '../../components/Typography.styled';
 
 export function AboutMe(props: PagePartProps) {
     return (

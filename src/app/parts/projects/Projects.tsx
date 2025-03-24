@@ -1,14 +1,14 @@
-import { ProjectsStyledContainer } from './Projects.styled.tsx';
-import { PagePartProps } from '../../shared/models/PagePartProps.ts';
-import { H1Styled } from '../../components/Typography.styled.tsx';
-import { ProjectSectionComponent } from '../../components/project-section/ProjectSection.component.tsx';
-import { ProjectListComponent } from '../../components/project-section/ProjectList.component.tsx';
+import { ProjectsStyledContainer } from './Projects.styled';
+import { PagePartProps } from '../../shared/models/PagePartProps';
+import { H1Styled } from '../../components/Typography.styled';
+import { ProjectSectionComponent } from '../../components/project-section/ProjectSection.component';
+import { ProjectListComponent } from '../../components/project-section/ProjectList.component';
 import {
     cppProjects,
     javaProjects,
     jsTsProjects,
     wordpressProjects,
-} from './Projects.list.ts';
+} from './Projects.list';
 
 export function Projects(props: PagePartProps) {
     return (
