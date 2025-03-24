@@ -3,8 +3,8 @@ import {
     ContactFormLabelStyled,
     ContactFormStyled, ContactFormSubmitButtonStyled, ContactFormTextareaStyled,
     ContactFormTextInputStyled,
-} from './ContactForm.styled.tsx';
-import { H2Styled } from '../../components/Typography.styled.tsx';
+} from './ContactForm.styled';
+import { H2Styled } from '../../components/Typography.styled';
 import { useState } from 'react';
 
 interface ContactFormFields {
@@ -45,6 +45,20 @@ export function ContactForm() {
                     && validateMessageInput(formData.message)
                 ) {
                     console.log("Form data - OK");
+
+                    fetch("http://localhost:3000/api/sendmail", {
+                            method: "POST",
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(formData),
+                        })
+                        .then((response: Response) => response.json())
+                        .then((data) => {
+                            console.log(data);
+                        })
+                        .catch((error) => {console.error(error)});
+
                 } else {
                     console.log("Form data - invalid");
                 }
