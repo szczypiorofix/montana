@@ -32,22 +32,38 @@ export function ContactForm() {
         email: "",
         message: ""
     });
+
+    function sendEmail() {
+        if (
+            validateNameInput(formData.name)
+            && validateEmailInput(formData.email)
+            && validateMessageInput(formData.message)
+        ) {
+            console.log("Form data - OK");
+
+            fetch('https://api.wroblewskipiotr.pl/api/mail/send', {
+                method: 'POST',
+                headers: {
+                  "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData),
+            })
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(err => console.error(err));
+
+        } else {
+            console.error("Form data - invalid");
+        }
+    }
+
     return <div>
         <H2Styled $textAlign={"center"}>Napisz wiadomość:</H2Styled>
         <ContactFormStyled
             onSubmit={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
-
-                if (
-                    validateNameInput(formData.name)
-                    && validateEmailInput(formData.email)
-                    && validateMessageInput(formData.message)
-                ) {
-                    console.log("Form data - OK");
-                } else {
-                    console.log("Form data - invalid");
-                }
+                sendEmail();
             }}
         >
             <ContactFormGroupStyled>
