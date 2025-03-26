@@ -48,7 +48,8 @@ const ContactFormTextInputStyled = styled.input`
     transition: 0.2s;
     box-shadow: 1px 1px 2px var(--Mindaro);
     color: var(--EerieBlack);
-    &:focus, &:active {
+    &:focus,
+    &:active {
         box-shadow: 1px 1px 8px var(--Mindaro);
     }
 `;
@@ -64,9 +65,16 @@ const ContactFormTextareaStyled = styled.textarea`
     font-size: 0.56em;
     color: var(--EerieBlack);
     box-shadow: 1px 1px 2px var(--Mindaro);
-    &:focus, &:active {
+    &:focus,
+    &:active {
         box-shadow: 1px 1px 6px var(--Mindaro);
     }
+`;
+
+const ContactFormResponseFieldStyled = styled.p`
+    font-size: 0.45em;
+    text-align: center;
+    color: var(--Olivine);
 `;
 
 const ContactFormSubmitButtonStyled = styled.button`
@@ -104,7 +112,7 @@ const ContactFormSubmitButtonStyled = styled.button`
         width: 0;
         height: 100%;
         background-color: var(--BlackOlive);
-        transition: all .3s;
+        transition: all 0.3s;
         z-index: -1;
     }
     &:hover {
@@ -113,6 +121,17 @@ const ContactFormSubmitButtonStyled = styled.button`
             width: 100%;
         }
     }
+    &:disabled {
+        cursor: not-allowed;
+    }
 `;
 
-export { ContactFormStyled, ContactFormGroupStyled, ContactFormTextInputStyled, ContactFormLabelStyled, ContactFormTextareaStyled, ContactFormSubmitButtonStyled };
+export {
+    ContactFormStyled,
+    ContactFormResponseFieldStyled,
+    ContactFormGroupStyled,
+    ContactFormTextInputStyled,
+    ContactFormLabelStyled,
+    ContactFormTextareaStyled,
+    ContactFormSubmitButtonStyled,
+};
