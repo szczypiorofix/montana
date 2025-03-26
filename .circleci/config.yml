@@ -1,0 +1,23 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@5.2
+
+jobs:
+  build_and_deploy:
+    executor: node/default
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run test
+      - run: npm run build
+      - run: node deploy.js
+
+workflows:
+  tm-workflow:
+    jobs:
+      - build_and_deploy:
+          filters:
+            branches:
+              only:
+                - master
