@@ -2,6 +2,7 @@
     "name": "montana",
     "private": true,
     "version": "0.0.1",
+    "type": "module",
     "author": {
         "name": "szczypiorofix",
         "url": "https://wroblewskipiotr.pl"

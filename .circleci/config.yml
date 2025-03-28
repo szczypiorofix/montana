@@ -10,7 +10,7 @@ jobs:
       - checkout
       - run: npm install
       - run: npm run build
-      - run: node deploy.js
+      - run: node deploy.cjs
 
 workflows:
   tm-workflow:
